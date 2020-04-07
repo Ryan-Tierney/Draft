@@ -1,5 +1,7 @@
 require_relative "Draft/version"
 require_relative "Draft/cli"
+require_relative "Draft/prospect"
+require_relative "Draft/scraper"
 require "nokogiri"
 require "pry"
 require "open-uri"
