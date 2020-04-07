@@ -4,6 +4,7 @@ class Draft::CLI
     puts "Welcome! This is a list of the top 10 players for the 2020 NFL draft".colorize(:light_red)
     gets_player_list 
     gives_player_list
+    gets_user_selection
   end 
   
   def gets_player_list
@@ -13,6 +14,20 @@ class Draft::CLI
   def gives_player_list 
     @prospect.each_with_index do |player, i|
       puts "#{i +1}. #{player}"
+    end 
+  end 
+  
+  def gets_user_selection 
+    chosen_player = gets.strip 
+    if valid_input?(chosen_player, @prospect) 
+      puts "here is the data for #{@prospect}"
+    else 
+      puts "please enter a valid selection!"
+    end 
+  end 
+  
+  def valid_input?(input, data)
+    if input.to_i <= data.length && input.to_1 > 0 
     end 
   end 
 end 
