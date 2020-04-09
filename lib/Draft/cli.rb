@@ -8,7 +8,6 @@ class Draft::CLI
   end 
   
   def gets_player_list
-    Draft::Prospect.new("Joe Burrow", "Summary")
     @prospect = Draft::Prospect.all 
   end 
   

@@ -11,6 +11,7 @@ class Draft::Prospect
   end 
   
   def self.all 
+    Draft::Scraper.scrape_prospect_names if @@all.empty?
     @@all 
   end 
   
