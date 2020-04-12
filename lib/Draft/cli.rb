@@ -12,10 +12,10 @@ class Draft::CLI
   end 
   
   def gives_player_list 
-      puts "\nChoose a player to see his summary!\n".colorize(:light_blue)
     @prospect.each.with_index(1) do |player, index|
-      puts "#{index}. #{player.name}"
+      puts " #{index}. #{player.name} "
     end 
+      puts "\nSelect a player by typing 1-50 to learn more about them!\n".colorize(:light_blue)
   end 
   
   def gets_user_selection 
@@ -29,18 +29,19 @@ class Draft::CLI
   
   def show_summary_for(chosen_player)
     player = @prospect[chosen_player -1]
-    puts "#{player.name}"
-    puts "#{player.summary}"
+    puts "\n#{player.name}\n"
+    print "\n#{player.summary}\n"
     gets_user_action
   end 
   
   def gets_user_action 
-    puts "Would you like to view another players summary? (y/n)"
+    puts "\nWould you like to view another players summary? (y/n)\n".colorize(:light_red)
     input = gets.strip 
     if input == "y"
       gives_player_list
+      gets_user_selection
     elsif input == "n"
-     puts "Thank you, enjoy the draft!"
+     puts "\nThank you, enjoy the draft!\n".colorize(:light_blue)
    end 
  end 
 end 
