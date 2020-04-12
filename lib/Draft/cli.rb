@@ -1,7 +1,7 @@
 class Draft::CLI 
   
   def call 
-    puts "Welcome! This is a list of the top 10 players for the 2020 NFL draft".colorize(:light_red)
+    puts "Welcome! This is a list of the top 50 players for the 2020 NFL draft".colorize(:light_red)
     gets_player_list 
     gives_player_list
     gets_user_selection
