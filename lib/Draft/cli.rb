@@ -31,5 +31,16 @@ class Draft::CLI
     player = @prospect[chosen_player -1]
     puts "#{player.name}"
     puts "#{player.summary}"
+    gets_user_action
   end 
+  
+  def gets_user_action 
+    puts "Would you like to view another players summary? (y/n)"
+    input = gets.strip 
+    if input == "y"
+      gives_player_list
+    elsif input == "n"
+     puts "Thank you, enjoy the draft!"
+   end 
+ end 
 end 
