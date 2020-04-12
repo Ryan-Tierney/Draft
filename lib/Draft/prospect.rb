@@ -1,24 +1,18 @@
 class Draft::Prospect
   
-  attr_accessor :name
-  attr_writer :summary
+  attr_accessor :name, :summary
   
   @@all = [] 
   
-  def initialize(name)
+  def initialize(name, summary)
     @name = name 
-    @summary = " " 
+    @summary = summary
     save 
   end 
   
   def self.all 
     Draft::Scraper.scrape_prospect if @@all.empty?
     @@all 
-  end 
-  
-  def summary 
-    Draft::Scraper.scrape_prospect if @summary.empty?
-    @summary
   end 
   
   def save

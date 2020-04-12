@@ -5,9 +5,8 @@ class Draft::Scraper
   prospect = doc.css("div.pr-item")
     prospect.each do |p|
     name = p.css("p.team-info").text.strip
-    Draft::Prospect.new(name)
-    #summary = p.css("p.pr-body").text.strip
-    #Draft::Prospect.new(summary)
+    summary = p.css("div.pr-body").text.strip
+    Draft::Prospect.new(name, summary)
    end 
  end
 end 
